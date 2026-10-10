@@ -14,12 +14,13 @@ widened allow-list is a false claim about what this catalog conforms to.
 
 ## The rashid version floor
 
-The gate needs rashid `>=0.1.5,<0.2.0`. It reads `rashid --version` and fails
+The gate needs rashid `>=0.1.8,<0.2.0`. It reads `rashid --version` and fails
 outside that range. It also fails when rashid is absent, and prints the install
 command. A skip would report a green run for a catalog that no validator read.
 
-The floor is 0.1.5 because rules PTL-LNK-007, PTL-LNK-008, PTL-LNK-009 and
-PTL-AST-006 do not exist below it. The gate asserts all four. An older rashid
+The floor is 0.1.8, the first rashid that accepts a v0.2.0 root `self` link
+(PORTO-CORE-081). Rules PTL-LNK-007, PTL-LNK-008, PTL-LNK-009 and PTL-AST-006
+do not exist below 0.1.5. The gate asserts all four. An older rashid
 reports a pass for a catalog that it never checked against them. The same range
 is in `portolan-cli/pyproject.toml` and in the CI install step.
 
@@ -82,3 +83,11 @@ install command. It takes no version floor and no pin. The rashid floor exists
 because that gate asserts four named rules. This gate asserts no stac-check
 rule. It needs the opposite property. A pin holds the exemption open after the
 upstream fix ships.
+
+## Warnings kept on purpose
+
+Warnings do not fail the gate. These are known and kept:
+
+| Rule | Where | Why |
+|---|---|---|
+| PTL-CAT-001 (flat list of children) | each collection, 224 items | The items are one-degree tiles of one grid. Subcatalogs would split them by an arbitrary key and help no client: browsers and the demo app read `items.parquet`, which answers spatial queries in one request. |

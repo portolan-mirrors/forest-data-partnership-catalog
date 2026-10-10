@@ -33,3 +33,6 @@ __pycache__/
 *.pyc
 .venv/
 .ruff_cache/
+
+# Item thumbnails live in object storage (tools/upload_data.py), not in git.
+*.jpg

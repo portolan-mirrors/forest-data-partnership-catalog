@@ -1,0 +1,54 @@
+{
+ "_comment": "Per-commodity text for tools/build_catalog.py. context: the commodity paragraph of the collection description, from the pilot catalog, without its measured figures (build_catalog.py computes them per collection) (gs://portolan-earthengine-forestdatapartnership). The common paragraph about the Forest Data Partnership is in build_catalog.py.",
+ "commodities": {
+  "cocoa": {
+   "label": "Cocoa",
+   "subject": "cocoa trees",
+   "context": "Ghana and Côte d'Ivoire are the two largest cocoa producers in the world and the best-sampled region in the cocoa reference database. It includes the WRI West Africa Cocoa dataset of about 760,000 GPS-traced plots, CIAT plot data in Ghana, CERSGIS field data from a Lacuna Fund project, and field points collected across Ghana, Côte d'Ivoire, Liberia and Sierra Leone.",
+   "keywords": [
+    "cocoa",
+    "agriculture",
+    "plantation",
+    "eudr",
+    "landuse"
+   ]
+  },
+  "coffee": {
+   "label": "Coffee",
+   "subject": "coffee",
+   "context": "Coffee is a minor crop in this area and the reference database lists no coffee samples for Ghana or Côte d'Ivoire. Use this collection as a negative control next to cocoa, or to check for false positives, rather than as a coffee map.",
+   "keywords": [
+    "coffee",
+    "agriculture",
+    "plantation",
+    "eudr",
+    "landuse"
+   ]
+  },
+  "palm": {
+   "label": "Oil palm",
+   "subject": "oil palm trees",
+   "context": "Oil palm grows across the same forest zone as cocoa in southern Ghana and Côte d'Ivoire, in both industrial estates and smallholder plots. The reference database includes CIAT palm samples in Ghana and field points collected across Ghana, Côte d'Ivoire, Liberia and Sierra Leone.",
+   "keywords": [
+    "oil palm",
+    "agriculture",
+    "plantation",
+    "eudr",
+    "landuse"
+   ]
+  },
+  "rubber": {
+   "label": "Rubber",
+   "subject": "rubber trees",
+   "context": "Côte d'Ivoire is the largest rubber producer in Africa, with plantations concentrated in its south and south-west. The reference database includes field points collected across Ghana, Côte d'Ivoire, Liberia and Sierra Leone.",
+   "keywords": [
+    "rubber",
+    "agriculture",
+    "plantation",
+    "eudr",
+    "landuse"
+   ]
+  }
+ },
+ "common_paragraph": "The Forest Data Partnership (https://developers.google.com/earth-engine/datasets/publisher/forestdatapartnership) is a collaboration on global monitoring of deforestation, degradation and restoration linked to commodity production. It is coordinated with the FAO (https://www.fao.org/in-action/forest-data-partnership) and its reference data come from contributors such as the FAO, WRI, CIAT, MapBiomas, SERVIR, IIASA and Google. Google produces the community models: a deep learning model trained on the AlphaEarth Foundation annual satellite embeddings (64 features per 10 m pixel) with millions of community-sourced reference points. Release 2026a covers the pan-tropical belt from 24°S to 24°N for 2018, 2020, 2022 and 2024, and adds input data, bug fixes and a reworked processing pipeline over release 2025b. The maps are per-pixel probabilities, so users choose a threshold for their purpose, for example commodity supply-chain and deforestation-regulation checks. The datasets are not yet peer reviewed. Method and limitations: https://github.com/google/forest-data-partnership/tree/main/models/model_2026a"
+}

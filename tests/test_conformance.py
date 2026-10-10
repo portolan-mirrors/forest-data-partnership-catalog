@@ -38,14 +38,15 @@ ACCEPTED: set[str] = set()
 config = load_config()
 target = ROOT / config["publish_dir"]
 
-# The floor comes from portolan-cli/pyproject.toml:54. Rules PTL-LNK-007,
+# 0.1.8 is the first rashid that accepts a v0.2.0 root `self` link (PORTO-CORE-081).
+# The floor first came from portolan-cli/pyproject.toml:54. Rules PTL-LNK-007,
 # PTL-LNK-008, PTL-LNK-009 and PTL-AST-006 do not exist below rashid 0.1.5.
 # This gate asserts all four. A rashid below the floor reports a pass for a
 # catalog that it never checked against those four rules. The upper bound stops
 # an unreviewed 0.2 rule set from changing what this gate means.
-MIN_VERSION = (0, 1, 5)
+MIN_VERSION = (0, 1, 8)
 MAX_VERSION = (0, 2, 0)
-SPEC = "rashid>=0.1.5,<0.2.0"
+SPEC = "rashid>=0.1.8,<0.2.0"
 INSTALL = f"python -m pip install '{SPEC}'"
 
 
