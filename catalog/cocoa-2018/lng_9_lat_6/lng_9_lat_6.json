@@ -1,0 +1,171 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/render/v2.0.0/schema.json"
+  ],
+  "id": "lng_9_lat_6",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          8.99995133700825,
+          5.999937614162163
+        ],
+        [
+          8.99995133700825,
+          7.000032019972959
+        ],
+        [
+          10.000045742819045,
+          7.000032019972959
+        ],
+        [
+          10.000045742819045,
+          5.999937614162163
+        ],
+        [
+          8.99995133700825,
+          5.999937614162163
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    8.99995133700825,
+    5.999937614162163,
+    10.000045742819045,
+    7.000032019972959
+  ],
+  "properties": {
+    "title": "Cocoa probability 2018, tile 9°E–10°E, 6°N–7°N",
+    "datetime": "2018-07-01T00:00:00Z",
+    "start_datetime": "2018-01-01T00:00:00Z",
+    "end_datetime": "2018-12-31T23:59:59Z",
+    "gsd": 10,
+    "proj:code": "EPSG:4326",
+    "proj:bbox": [
+      8.99995133700825,
+      5.999937614162163,
+      10.000045742819045,
+      7.000032019972959
+    ],
+    "proj:shape": [
+      11133,
+      11133
+    ],
+    "proj:transform": [
+      8.9831528412e-05,
+      0.0,
+      8.99995133700825,
+      0.0,
+      -8.9831528412e-05,
+      7.000032019972959
+    ],
+    "raster:spatial_resolution": 8.9831528412e-05,
+    "renders": {
+      "probability": {
+        "title": "Cocoa probability 2018 (0 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "likely-cocoa": {
+        "title": "Likely cocoa (probability 0.5 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.5,
+            1.0
+          ]
+        ]
+      }
+    },
+    "portolan:render_order": [
+      "probability"
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://storage.googleapis.com/earth-engine-public-requester-pays/forestdatapartnership/2026a/cocoa/2018/lng_9_lat_6.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Source file (Google Cloud Storage, requester pays)"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./lng_9_lat_6.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
+      "title": "Cocoa probability 2018 (COG)",
+      "file:size": 557034458,
+      "file:checksum": "d50110968e0266b2dc565128f0f72259b4f9c8",
+      "bands": [
+        {
+          "name": "probability",
+          "data_type": "float32",
+          "description": "Probability that the pixel includes cocoa trees in 2018",
+          "statistics": {
+            "maximum": 0.97524160146713,
+            "mean": 0.01030253267844,
+            "minimum": 3.8594316755099e-21,
+            "stddev": 0.040833579414365,
+            "valid_percent": 100.0
+          }
+        }
+      ]
+    },
+    "thumbnail": {
+      "href": "./lng_9_lat_6.thumb.jpg",
+      "type": "image/jpeg",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Thumbnail of tile lng_9_lat_6",
+      "file:size": 4749,
+      "file:checksum": "12205969227bc53204c33f9fa9d291b90dda5a5bcb477a5bc354efad87f77b1619ea"
+    }
+  },
+  "collection": "cocoa-2018"
+}

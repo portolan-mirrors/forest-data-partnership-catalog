@@ -1,0 +1,171 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/render/v2.0.0/schema.json"
+  ],
+  "id": "lng_6_lat_4",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          5.999937614162696,
+          3.99992846559846
+        ],
+        [
+          5.999937614162696,
+          5.000022871409256
+        ],
+        [
+          7.000032019973492,
+          5.000022871409256
+        ],
+        [
+          7.000032019973492,
+          3.99992846559846
+        ],
+        [
+          5.999937614162696,
+          3.99992846559846
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    5.999937614162696,
+    3.99992846559846,
+    7.000032019973492,
+    5.000022871409256
+  ],
+  "properties": {
+    "title": "Rubber probability 2024, tile 6°E–7°E, 4°N–5°N",
+    "datetime": "2024-07-01T00:00:00Z",
+    "start_datetime": "2024-01-01T00:00:00Z",
+    "end_datetime": "2024-12-31T23:59:59Z",
+    "gsd": 10,
+    "proj:code": "EPSG:4326",
+    "proj:bbox": [
+      5.999937614162696,
+      3.99992846559846,
+      7.000032019973492,
+      5.000022871409256
+    ],
+    "proj:shape": [
+      11133,
+      11133
+    ],
+    "proj:transform": [
+      8.9831528412e-05,
+      0.0,
+      5.999937614162696,
+      0.0,
+      -8.9831528412e-05,
+      5.000022871409256
+    ],
+    "raster:spatial_resolution": 8.9831528412e-05,
+    "renders": {
+      "probability": {
+        "title": "Rubber probability 2024 (0 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "likely-rubber": {
+        "title": "Likely rubber (probability 0.5 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.5,
+            1.0
+          ]
+        ]
+      }
+    },
+    "portolan:render_order": [
+      "probability"
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://storage.googleapis.com/earth-engine-public-requester-pays/forestdatapartnership/2026a/rubber/2024/lng_6_lat_4.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Source file (Google Cloud Storage, requester pays)"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./lng_6_lat_4.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
+      "title": "Rubber probability 2024 (COG)",
+      "file:size": 516068284,
+      "file:checksum": "d50110381acd40d3a35325a9b5022c3ace7cbb",
+      "bands": [
+        {
+          "name": "probability",
+          "data_type": "float32",
+          "description": "Probability that the pixel includes rubber trees in 2024",
+          "statistics": {
+            "maximum": 0.99501323699951,
+            "mean": 0.00042979230946809,
+            "minimum": 1.5304077449763e-10,
+            "stddev": 0.011793967526126,
+            "valid_percent": 94.35
+          }
+        }
+      ]
+    },
+    "thumbnail": {
+      "href": "./lng_6_lat_4.thumb.jpg",
+      "type": "image/jpeg",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Thumbnail of tile lng_6_lat_4",
+      "file:size": 3388,
+      "file:checksum": "1220b31184ccb5a4ca2c3ea4b3fc3d07516100d47c48c0bc4f103a09d3395aa84faf"
+    }
+  },
+  "collection": "rubber-2024"
+}

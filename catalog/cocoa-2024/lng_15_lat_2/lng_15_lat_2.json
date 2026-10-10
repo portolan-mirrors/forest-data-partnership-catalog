@@ -1,0 +1,171 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/render/v2.0.0/schema.json"
+  ],
+  "id": "lng_15_lat_2",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          14.999978782699358,
+          1.999919317034758
+        ],
+        [
+          14.999978782699358,
+          3.000013722845554
+        ],
+        [
+          16.000073188510154,
+          3.000013722845554
+        ],
+        [
+          16.000073188510154,
+          1.999919317034758
+        ],
+        [
+          14.999978782699358,
+          1.999919317034758
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    14.999978782699358,
+    1.999919317034758,
+    16.000073188510154,
+    3.000013722845554
+  ],
+  "properties": {
+    "title": "Cocoa probability 2024, tile 15°E–16°E, 2°N–3°N",
+    "datetime": "2024-07-01T00:00:00Z",
+    "start_datetime": "2024-01-01T00:00:00Z",
+    "end_datetime": "2024-12-31T23:59:59Z",
+    "gsd": 10,
+    "proj:code": "EPSG:4326",
+    "proj:bbox": [
+      14.999978782699358,
+      1.999919317034758,
+      16.000073188510154,
+      3.000013722845554
+    ],
+    "proj:shape": [
+      11133,
+      11133
+    ],
+    "proj:transform": [
+      8.9831528412e-05,
+      0.0,
+      14.999978782699358,
+      0.0,
+      -8.9831528412e-05,
+      3.000013722845554
+    ],
+    "raster:spatial_resolution": 8.9831528412e-05,
+    "renders": {
+      "probability": {
+        "title": "Cocoa probability 2024 (0 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "likely-cocoa": {
+        "title": "Likely cocoa (probability 0.5 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.5,
+            1.0
+          ]
+        ]
+      }
+    },
+    "portolan:render_order": [
+      "probability"
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://storage.googleapis.com/earth-engine-public-requester-pays/forestdatapartnership/2026a/cocoa/2024/lng_15_lat_2.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Source file (Google Cloud Storage, requester pays)"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./lng_15_lat_2.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
+      "title": "Cocoa probability 2024 (COG)",
+      "file:size": 558717261,
+      "file:checksum": "d50110c996758ff28b3d378845f4a6c6d1f3dc",
+      "bands": [
+        {
+          "name": "probability",
+          "data_type": "float32",
+          "description": "Probability that the pixel includes cocoa trees in 2024",
+          "statistics": {
+            "maximum": 0.99660211801529,
+            "mean": 0.015096358018144,
+            "minimum": 3.5899456605067e-17,
+            "stddev": 0.038114845016082,
+            "valid_percent": 100.0
+          }
+        }
+      ]
+    },
+    "thumbnail": {
+      "href": "./lng_15_lat_2.thumb.jpg",
+      "type": "image/jpeg",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Thumbnail of tile lng_15_lat_2",
+      "file:size": 5560,
+      "file:checksum": "12204e7750e019259116035eed3f2137d1548ebf51074ebe4a6df15c61a0443e6ce9"
+    }
+  },
+  "collection": "cocoa-2024"
+}

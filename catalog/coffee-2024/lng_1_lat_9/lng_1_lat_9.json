@@ -1,0 +1,171 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/render/v2.0.0/schema.json"
+  ],
+  "id": "lng_1_lat_9",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          0.9999147427534394,
+          8.999951337007717
+        ],
+        [
+          0.9999147427534394,
+          10.000045742818513
+        ],
+        [
+          2.0000091485642355,
+          10.000045742818513
+        ],
+        [
+          2.0000091485642355,
+          8.999951337007717
+        ],
+        [
+          0.9999147427534394,
+          8.999951337007717
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    0.9999147427534394,
+    8.999951337007717,
+    2.0000091485642355,
+    10.000045742818513
+  ],
+  "properties": {
+    "title": "Coffee probability 2024, tile 1°E–2°E, 9°N–10°N",
+    "datetime": "2024-07-01T00:00:00Z",
+    "start_datetime": "2024-01-01T00:00:00Z",
+    "end_datetime": "2024-12-31T23:59:59Z",
+    "gsd": 10,
+    "proj:code": "EPSG:4326",
+    "proj:bbox": [
+      0.9999147427534394,
+      8.999951337007717,
+      2.0000091485642355,
+      10.000045742818513
+    ],
+    "proj:shape": [
+      11133,
+      11133
+    ],
+    "proj:transform": [
+      8.9831528412e-05,
+      0.0,
+      0.9999147427534394,
+      0.0,
+      -8.9831528412e-05,
+      10.000045742818513
+    ],
+    "raster:spatial_resolution": 8.9831528412e-05,
+    "renders": {
+      "probability": {
+        "title": "Coffee probability 2024 (0 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "likely-coffee": {
+        "title": "Likely coffee (probability 0.5 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.5,
+            1.0
+          ]
+        ]
+      }
+    },
+    "portolan:render_order": [
+      "probability"
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://storage.googleapis.com/earth-engine-public-requester-pays/forestdatapartnership/2026a/coffee/2024/lng_1_lat_9.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Source file (Google Cloud Storage, requester pays)"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./lng_1_lat_9.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
+      "title": "Coffee probability 2024 (COG)",
+      "file:size": 551927600,
+      "file:checksum": "d50110ab52021587c2e6c9a423ef01524e2e6f",
+      "bands": [
+        {
+          "name": "probability",
+          "data_type": "float32",
+          "description": "Probability that the pixel includes coffee in 2024",
+          "statistics": {
+            "maximum": 0.25256079435349,
+            "mean": 0.00021242401860539,
+            "minimum": 2.2066681815147e-10,
+            "stddev": 0.001230703853197,
+            "valid_percent": 100.0
+          }
+        }
+      ]
+    },
+    "thumbnail": {
+      "href": "./lng_1_lat_9.thumb.jpg",
+      "type": "image/jpeg",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Thumbnail of tile lng_1_lat_9",
+      "file:size": 1021,
+      "file:checksum": "1220e00474e85039272c97079a8a4d4786bd474539514e07a2c2f9751c09e41bdaaa"
+    }
+  },
+  "collection": "coffee-2024"
+}

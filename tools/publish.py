@@ -65,7 +65,8 @@ CONTENT_TYPES = {
     ".jpeg": "image/jpeg",
     ".webp": "image/webp",
     ".svg": "image/svg+xml",
-    ".tif": "image/tiff; application=geotiff",
+    # Every GeoTIFF in this catalog is a COG, so the type matches the STAC asset type.
+    ".tif": "image/tiff; application=geotiff; profile=cloud-optimized",
     ".tiff": "image/tiff; application=geotiff",
     ".laz": "application/vnd.laszip",
     ".xml": "application/xml",

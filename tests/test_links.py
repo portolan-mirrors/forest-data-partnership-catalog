@@ -31,9 +31,12 @@ skipped = 0
 CI_LIGHT = os.environ.get("CI_LIGHT") == "1"
 # The exemption reads the suffix and nothing else. A directory rule or a path
 # prefix rule widens on its own as the catalog grows. This tuple does not.
+# This catalog also keeps its item thumbnails (.jpg) out of git: 896 per mirrored
+# year, binary, rebuilt by tools/extract_tile_metadata.py. They upload with
+# tools/upload_data.py like the COGs.
 DATA_SUFFIXES = (
     ".parquet", ".pmtiles", ".tif", ".tiff", ".copc.laz", ".laz", ".gpkg",
-    ".zarr", ".geojsonl", ".shp", ".zip",
+    ".zarr", ".geojsonl", ".shp", ".zip", ".jpg",
 )
 
 

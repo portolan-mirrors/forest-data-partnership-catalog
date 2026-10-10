@@ -58,6 +58,7 @@ from publish import (  # noqa: E402
 # does not. One catalog staged 45 GB of GeoJSON that tippecanoe reads and
 # nobody should download. An allow-list keeps that 45 GB out with no edit.
 PUBLISHABLE_SUFFIXES = {
+    ".jpg",  # item thumbnails
     ".parquet",
     ".pmtiles",
     ".tif",

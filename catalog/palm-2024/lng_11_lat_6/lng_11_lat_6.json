@@ -1,0 +1,171 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/render/v2.0.0/schema.json"
+  ],
+  "id": "lng_11_lat_6",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          10.999960485571952,
+          5.999937614162163
+        ],
+        [
+          10.999960485571952,
+          7.000032019972959
+        ],
+        [
+          12.000054891382748,
+          7.000032019972959
+        ],
+        [
+          12.000054891382748,
+          5.999937614162163
+        ],
+        [
+          10.999960485571952,
+          5.999937614162163
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    10.999960485571952,
+    5.999937614162163,
+    12.000054891382748,
+    7.000032019972959
+  ],
+  "properties": {
+    "title": "Oil palm probability 2024, tile 11°E–12°E, 6°N–7°N",
+    "datetime": "2024-07-01T00:00:00Z",
+    "start_datetime": "2024-01-01T00:00:00Z",
+    "end_datetime": "2024-12-31T23:59:59Z",
+    "gsd": 10,
+    "proj:code": "EPSG:4326",
+    "proj:bbox": [
+      10.999960485571952,
+      5.999937614162163,
+      12.000054891382748,
+      7.000032019972959
+    ],
+    "proj:shape": [
+      11133,
+      11133
+    ],
+    "proj:transform": [
+      8.9831528412e-05,
+      0.0,
+      10.999960485571952,
+      0.0,
+      -8.9831528412e-05,
+      7.000032019972959
+    ],
+    "raster:spatial_resolution": 8.9831528412e-05,
+    "renders": {
+      "probability": {
+        "title": "Oil palm probability 2024 (0 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "likely-palm": {
+        "title": "Likely oil palm (probability 0.5 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.5,
+            1.0
+          ]
+        ]
+      }
+    },
+    "portolan:render_order": [
+      "probability"
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://storage.googleapis.com/earth-engine-public-requester-pays/forestdatapartnership/2026a/palm/2024/lng_11_lat_6.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Source file (Google Cloud Storage, requester pays)"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./lng_11_lat_6.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
+      "title": "Oil palm probability 2024 (COG)",
+      "file:size": 563050209,
+      "file:checksum": "d501100540466245576d7bb17765fd6dd13919",
+      "bands": [
+        {
+          "name": "probability",
+          "data_type": "float32",
+          "description": "Probability that the pixel includes oil palm trees in 2024",
+          "statistics": {
+            "maximum": 0.88694602251053,
+            "mean": 0.00044575994097607,
+            "minimum": 5.8222762040468e-15,
+            "stddev": 0.0074112782838067,
+            "valid_percent": 100.0
+          }
+        }
+      ]
+    },
+    "thumbnail": {
+      "href": "./lng_11_lat_6.thumb.jpg",
+      "type": "image/jpeg",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Thumbnail of tile lng_11_lat_6",
+      "file:size": 1171,
+      "file:checksum": "1220d374a2e4ef15aa990cc7f4a19a38c7c81648c36850b7dc82e8342ccce284ef7f"
+    }
+  },
+  "collection": "palm-2024"
+}

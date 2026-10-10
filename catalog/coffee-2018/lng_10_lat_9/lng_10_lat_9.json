@@ -1,0 +1,171 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/render/v2.0.0/schema.json"
+  ],
+  "id": "lng_10_lat_9",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          9.999955911290101,
+          8.999951337007717
+        ],
+        [
+          9.999955911290101,
+          10.000045742818513
+        ],
+        [
+          11.000050317100897,
+          10.000045742818513
+        ],
+        [
+          11.000050317100897,
+          8.999951337007717
+        ],
+        [
+          9.999955911290101,
+          8.999951337007717
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    9.999955911290101,
+    8.999951337007717,
+    11.000050317100897,
+    10.000045742818513
+  ],
+  "properties": {
+    "title": "Coffee probability 2018, tile 10°E–11°E, 9°N–10°N",
+    "datetime": "2018-07-01T00:00:00Z",
+    "start_datetime": "2018-01-01T00:00:00Z",
+    "end_datetime": "2018-12-31T23:59:59Z",
+    "gsd": 10,
+    "proj:code": "EPSG:4326",
+    "proj:bbox": [
+      9.999955911290101,
+      8.999951337007717,
+      11.000050317100897,
+      10.000045742818513
+    ],
+    "proj:shape": [
+      11133,
+      11133
+    ],
+    "proj:transform": [
+      8.9831528412e-05,
+      0.0,
+      9.999955911290101,
+      0.0,
+      -8.9831528412e-05,
+      10.000045742818513
+    ],
+    "raster:spatial_resolution": 8.9831528412e-05,
+    "renders": {
+      "probability": {
+        "title": "Coffee probability 2018 (0 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "likely-coffee": {
+        "title": "Likely coffee (probability 0.5 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.5,
+            1.0
+          ]
+        ]
+      }
+    },
+    "portolan:render_order": [
+      "probability"
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://storage.googleapis.com/earth-engine-public-requester-pays/forestdatapartnership/2026a/coffee/2018/lng_10_lat_9.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Source file (Google Cloud Storage, requester pays)"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./lng_10_lat_9.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
+      "title": "Coffee probability 2018 (COG)",
+      "file:size": 549044611,
+      "file:checksum": "d50110fe50d4b049b4f614c4a0957af5e4673d",
+      "bands": [
+        {
+          "name": "probability",
+          "data_type": "float32",
+          "description": "Probability that the pixel includes coffee in 2018",
+          "statistics": {
+            "maximum": 0.027064824476838,
+            "mean": 3.6398286904789e-06,
+            "minimum": 8.711677212947e-12,
+            "stddev": 3.8277432102084e-05,
+            "valid_percent": 100.0
+          }
+        }
+      ]
+    },
+    "thumbnail": {
+      "href": "./lng_10_lat_9.thumb.jpg",
+      "type": "image/jpeg",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Thumbnail of tile lng_10_lat_9",
+      "file:size": 1013,
+      "file:checksum": "12209c8c6513763910083153531f503fe0e6e75e81e111f648f22f7390d0fd5995c6"
+    }
+  },
+  "collection": "coffee-2018"
+}

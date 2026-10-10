@@ -1,0 +1,142 @@
+{
+ "cocoa-2018": {
+  "bbox": [
+   -180.00001488697754,
+   -24.00126515613981,
+   180.0004857815683,
+   24.00001995123602
+  ],
+  "bytes": 2616259046,
+  "file": "cocoa-2018_overview.tif",
+  "file_checksum": "12207bc98ec1d4275ce95a441e35035ef2d643cb82c79236416f9c9e87730d7b4b22",
+  "lineage": "For each of the release's source tiles: gdal_translate -ovr 4 (the 347 px internal overview, as published, unchanged). Then gdalbuildvrt -vrtnodata nan over the extracts, and gdal_translate -of COG -co COMPRESS=ZSTD -co PREDICTOR=YES -co BLOCKSIZE=512 -co OVERVIEW_RESAMPLING=AVERAGE -co STATISTICS=YES. Script: tools/build_overview.sh.",
+  "shape": [
+   16655,
+   124909
+  ],
+  "software": {
+   "GDAL": "3.13.3 \"Iowa City\""
+  },
+  "source_tiles": 5516,
+  "statistics": {
+   "maximum": 0.99989998340607,
+   "mean": 0.0048737287675168,
+   "minimum": 2.8931222293653e-31,
+   "stddev": 0.046126892964345,
+   "valid_percent": 27.12
+  },
+  "transform": [
+   0.0028821021757323,
+   0.0,
+   -180.00001488697754,
+   0.0,
+   -0.0028820945726434,
+   24.00001995123602
+  ]
+ },
+ "coffee-2018": {
+  "bbox": [
+   -180.00001488697754,
+   -24.00126515613981,
+   180.0004857815683,
+   24.00001995123602
+  ],
+  "bytes": 2486271928,
+  "file": "coffee-2018_overview.tif",
+  "file_checksum": "1220d00e17d0d0167094e2b24c04e88744b7879fceafb2993ac0959c49eef30a9c70",
+  "lineage": "For each of the release's source tiles: gdal_translate -ovr 4 (the 347 px internal overview, as published, unchanged). Then gdalbuildvrt -vrtnodata nan over the extracts, and gdal_translate -of COG -co COMPRESS=ZSTD -co PREDICTOR=YES -co BLOCKSIZE=512 -co OVERVIEW_RESAMPLING=AVERAGE -co STATISTICS=YES. Script: tools/build_overview.sh.",
+  "shape": [
+   16655,
+   124909
+  ],
+  "software": {
+   "GDAL": "3.13.3 \"Iowa City\""
+  },
+  "source_tiles": 5516,
+  "statistics": {
+   "maximum": 0.99969154596329,
+   "mean": 0.0033937399713152,
+   "minimum": 4.5207318855529e-18,
+   "stddev": 0.028971125163422,
+   "valid_percent": 27.12
+  },
+  "transform": [
+   0.0028821021757323,
+   0.0,
+   -180.00001488697754,
+   0.0,
+   -0.0028820945726434,
+   24.00001995123602
+  ]
+ },
+ "palm-2018": {
+  "bbox": [
+   -180.00001488697754,
+   -24.00126515613981,
+   180.0004857815683,
+   24.00001995123602
+  ],
+  "bytes": 2550773213,
+  "file": "palm-2018_overview.tif",
+  "file_checksum": "1220c5cff0a53120cdc71422fb6ff6471cc26be257a5cc7d4f13e367ab9c4027d399",
+  "lineage": "For each of the release's source tiles: gdal_translate -ovr 4 (the 347 px internal overview, as published, unchanged). Then gdalbuildvrt -vrtnodata nan over the extracts, and gdal_translate -of COG -co COMPRESS=ZSTD -co PREDICTOR=YES -co BLOCKSIZE=512 -co OVERVIEW_RESAMPLING=AVERAGE -co STATISTICS=YES. Script: tools/build_overview.sh.",
+  "shape": [
+   16655,
+   124909
+  ],
+  "software": {
+   "GDAL": "3.13.3 \"Iowa City\""
+  },
+  "source_tiles": 5516,
+  "statistics": {
+   "maximum": 0.99962842464447,
+   "mean": 0.0048946466891237,
+   "minimum": 3.8154708296911e-17,
+   "stddev": 0.052824206085145,
+   "valid_percent": 27.12
+  },
+  "transform": [
+   0.0028821021757323,
+   0.0,
+   -180.00001488697754,
+   0.0,
+   -0.0028820945726434,
+   24.00001995123602
+  ]
+ },
+ "rubber-2018": {
+  "bbox": [
+   -180.00001488697754,
+   -24.00126515613981,
+   180.0004857815683,
+   24.00001995123602
+  ],
+  "bytes": 2489734564,
+  "file": "rubber-2018_overview.tif",
+  "file_checksum": "122073d9f068ee6cd2b5b768b17935fe7534643b33bc433398f9a32f78854f88feb1",
+  "lineage": "For each of the release's source tiles: gdal_translate -ovr 4 (the 347 px internal overview, as published, unchanged). Then gdalbuildvrt -vrtnodata nan over the extracts, and gdal_translate -of COG -co COMPRESS=ZSTD -co PREDICTOR=YES -co BLOCKSIZE=512 -co OVERVIEW_RESAMPLING=AVERAGE -co STATISTICS=YES. Script: tools/build_overview.sh.",
+  "shape": [
+   16655,
+   124909
+  ],
+  "software": {
+   "GDAL": "3.13.3 \"Iowa City\""
+  },
+  "source_tiles": 5516,
+  "statistics": {
+   "maximum": 1.0,
+   "mean": 0.0061726204535253,
+   "minimum": 7.6217230768859e-14,
+   "stddev": 0.045805874354688,
+   "valid_percent": 27.12
+  },
+  "transform": [
+   0.0028821021757323,
+   0.0,
+   -180.00001488697754,
+   0.0,
+   -0.0028820945726434,
+   24.00001995123602
+  ]
+ }
+}
