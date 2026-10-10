@@ -273,7 +273,8 @@ def build_collection(c, cfg, common, year, tiles, ov):
 
 
 def collection_readme(cid, coll, n, year, has_overview):
-    lines = [f"# {coll['title']}", "", coll["description"], "",
+    lines = [f"# {coll['title'].split(' (')[0].replace(' probability ', ' probability, ')}", "",
+             coll["title"] + ".", "", coll["description"], "",
              "## License and attribution", "",
              f"[CC-BY-4.0]({LICENSE_URL}). Attribute as: \"{ATTRIBUTION}.\"", "",
              "## Provenance", "",
@@ -297,13 +298,13 @@ def collection_readme(cid, coll, n, year, has_overview):
 def collection_agents(cid, coll, n, year):
     c = cid.split("-")[0]
     return "\n".join([
-        f"# {coll['title']}: agent guide", "",
-        "Every claim here is quoted from the source documentation or measured from the files.", "",
-        "## What the data is", "",
+        f"# Agent guide: {c} probability, {year}", "",
+        "The claims here come from the source documentation or from measurements of the files.", "",
+        "## Band and items", "",
         f"- One band, `probability`, Float32 from 0 to 1, in EPSG:4326, about 10 m per pixel. {n} items, one "
         "per one-degree tile. Item ids are `lng_<west>_lat_<south>`.",
-        "- Values are model probabilities, not observations. Pick a threshold for your purpose; the collection "
-        "renders offer 0 to 1 and 0.5 to 1.",
+        "- Values are model probabilities. Pick a threshold for your purpose: the collection renders offer "
+        "0 to 1 and 0.5 to 1.",
         f"- The same item ids exist in the other commodity collections for {year}, and in `{c}-<other year>` "
         "collections, so tiles can be compared across commodities and years.", "",
         "## How to read it", "",

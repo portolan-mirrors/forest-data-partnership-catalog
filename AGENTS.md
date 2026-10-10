@@ -1,11 +1,11 @@
 ## This Repository
 
 The git-backed Portolan catalog of the Forest Data Partnership mirror on Source
-Cooperative (`portolan-mirrors/forest-data-partnership-catalog`). The metadata
-lives here; the data (COGs, thumbnails, overviews) lives in the bucket. Created
-from `portolan-sdi/portolan-catalog-template`.
+Cooperative (`portolan-mirrors/forest-data-partnership-catalog`), created from
+`portolan-sdi/portolan-catalog-template`. Git tracks the STAC metadata and its
+generator; the COGs, thumbnails and overviews sit in the Source Cooperative bucket.
 
-### How the catalog is built
+### Catalog build steps
 
 The STAC under `catalog/` is generated. Edit the generator or its inputs, never
 the generated JSON or the collection `README.md`/`AGENTS.md` files.
@@ -24,8 +24,8 @@ hand. `items.parquet` is gitignored and rebuilt by the steps above.
 
 This catalog publishes with `tools/publish.py` (metadata under `catalog/`) and
 `tools/upload_data.py` (thumbnails and overviews from `data_dir`), through the
-`data.source.coop` gateway with the `source-coop` AWS profile. It does not use
-`portolan push`: the two keep different state and do not interoperate. The
+`data.source.coop` gateway with the `source-coop` AWS profile. `portolan push`
+keeps different state and does not interoperate with these tools, so leave it unused here. The
 mirrored tiles were copied once by the transfer scripts in the planning repository
 and are not re-uploaded.
 

@@ -1,2 +1,1 @@
-Read AGENTS.md first: it holds the rules for this repository, how the catalog is
-generated, and how it publishes.
+Read AGENTS.md first. It has the repository rules and the build and publish steps.

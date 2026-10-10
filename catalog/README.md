@@ -1,4 +1,6 @@
-# Forest Data Partnership commodity maps (Source Cooperative mirror)
+# Commodity probability maps
+
+The Forest Data Partnership commodity maps, mirrored on Source Cooperative.
 
 Per-pixel probability, from 0 to 1, that land is planted with cocoa, coffee, oil palm
 or rubber, at 10 m resolution, from the Forest Data Partnership community model
@@ -21,7 +23,7 @@ Each item is one Cloud-Optimized GeoTIFF of about 11133 × 11133 Float32 pixels 
 EPSG:4326, with a 347 px thumbnail. Item ids (`lng_<west>_lat_<south>`) are the same
 in every collection, so a tile can be compared across commodities and years.
 
-Each collection also carries a **pan-tropical overview**: one COG of all 5,516 tiles
+Each collection also has a **pan-tropical overview**: one COG of all 5,516 tiles
 of the release for that commodity and year (24°S–24°N) at about 320 m, 2.5 to 2.6 GB.
 It serves maps below zoom 9 and coarse statistics. Every collection publishes its
 items as STAC GeoParquet (`items.parquet`).

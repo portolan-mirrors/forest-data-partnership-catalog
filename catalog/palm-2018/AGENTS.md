@@ -1,11 +1,11 @@
-# Oil palm probability 2018 (Forest Data Partnership model 2026a): agent guide
+# Agent guide: palm probability, 2018
 
-Every claim here is quoted from the source documentation or measured from the files.
+The claims here come from the source documentation or from measurements of the files.
 
-## What the data is
+## Band and items
 
 - One band, `probability`, Float32 from 0 to 1, in EPSG:4326, about 10 m per pixel. 224 items, one per one-degree tile. Item ids are `lng_<west>_lat_<south>`.
-- Values are model probabilities, not observations. Pick a threshold for your purpose; the collection renders offer 0 to 1 and 0.5 to 1.
+- Values are model probabilities. Pick a threshold for your purpose: the collection renders offer 0 to 1 and 0.5 to 1.
 - The same item ids exist in the other commodity collections for 2018, and in `palm-<other year>` collections, so tiles can be compared across commodities and years.
 
 ## How to read it

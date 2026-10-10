@@ -1,14 +1,16 @@
-# AGENTS.md — Forest Data Partnership commodity maps (Source Cooperative mirror)
+# Agent guide
+
+The Forest Data Partnership commodity maps, mirrored on Source Cooperative.
 
 Guidance for AI agents and automated clients working with this catalog.
 
-**One rule survives every edit to this file.** Every claim here is either quoted
+**This file has one rule.** Each claim here is either quoted
 from a source or measured from the data. If you cannot point at where a fact
 came from, it does not belong in this file. An agent acting on an invented join
 key or an invented column name produces a confident wrong answer, and nothing
 downstream catches it.
 
-## What this catalog holds
+## Contents
 
 Root: `https://data.source.coop/portolan-mirrors/forest-data-partnership-catalog/catalog.json`.
 
@@ -47,7 +49,7 @@ for year in (2018, 2024):
 
 - Item `id` (`lng_<west>_lat_<south>`, string) is the same tile in every collection.
   It is unique within a collection. Join on it to compare commodities or years.
-- The collection id carries commodity and year: `cocoa-2018`. The only other year
+- The collection id encodes commodity and year: `cocoa-2018`. The only other year
   fields are the item `datetime` (`<year>-07-01T00:00:00Z`) and its
   `start_datetime`/`end_datetime` for the whole year.
 
@@ -56,7 +58,7 @@ for year in (2018, 2024):
 - **Asset hrefs in `items.parquet` are relative to the item's folder, not to the
   parquet file.** `assets.data.href` reads `./lng_-2_lat_6.tif`. Resolve it as
   `<root>/<collection>/<id>/<href without ./>`. Tools that resolve it against the
-  parquet location (for example GDAL's GTI driver) point at files that do not exist.
+  parquet location (such as GDAL's GTI driver) point at files that do not exist.
 - **Probabilities are almost never exactly 0.** A filter `value > 0` keeps nearly
   every land pixel. Use a threshold (the collection renders use 0.5).
 - **The overview covers far more than the items.** It holds all 5,516 tiles of the

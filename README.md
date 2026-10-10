@@ -1,4 +1,4 @@
-# Forest Data Partnership: Source Cooperative mirror
+# Commodity maps mirror
 
 A git-backed [Portolan](https://www.portolan-sdi.org/) catalog of the Forest Data
 Partnership commodity maps produced by Google: per-pixel probability that land is
@@ -12,7 +12,7 @@ planted with cocoa, coffee, oil palm or rubber, at 10 m, model release 2026a.
 
 ## Why a mirror
 
-Google publishes the files in a requester-pays bucket. Every read is billed to the
+Google publishes the files in a requester-pays bucket. Google bills each read to the
 reader's Google Cloud project, anonymous HTTP is refused, and the bucket sends no
 CORS headers, so browsers cannot read it. This mirror serves the same files,
 byte for byte, over plain HTTPS with range requests and CORS: no account and no
@@ -22,7 +22,7 @@ billing, readable from QGIS, GDAL, Python and web maps.
 
 The West African cocoa belt (224 one-degree tiles, 15°W–17°E, 1°S–11°N), for
 each commodity and mirrored year, one collection per commodity and year
-(`cocoa-2024`, `cocoa-2018`, ...). Each collection also carries a pan-tropical
+(`cocoa-2024`, `cocoa-2018`, ...). Each collection also has a pan-tropical
 overview COG (about 320 m, all 5,516 tiles of the release) for low-zoom maps.
 
 ## Layout
