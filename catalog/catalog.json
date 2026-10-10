@@ -2,16 +2,23 @@
   "type": "Catalog",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.1/schema.json"
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json"
   ],
-  "id": "example-catalog",
-  "title": "Example Catalog",
-  "description": "TODO(setup): one or two sentences saying what this catalog holds, who produced the data, and who it is for. A person and an agent both read this first.",
+  "id": "forest-data-partnership",
+  "title": "Forest Data Partnership commodity maps (Source Cooperative mirror)",
+  "description": "Per-pixel probability that land is planted with cocoa, coffee, oil palm or rubber, at 10 m, from the Forest Data Partnership community model release 2026a, produced by Google. This mirror holds the West African cocoa belt for 2018, 2024: one collection per commodity and year, 1792 Cloud-Optimized GeoTIFFs copied unchanged from Google's requester-pays bucket and served over plain HTTPS, with pan-tropical overviews for low zoom. Attribution: \"Produced by Google for the Forest Data Partnership.\"",
   "links": [
     {
       "rel": "root",
       "href": "./catalog.json",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Catalog root"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/portolan-mirrors/forest-data-partnership-catalog/catalog.json",
+      "type": "application/json",
+      "title": "This catalog, as published"
     },
     {
       "rel": "describedby",
@@ -26,14 +33,75 @@
       "title": "Catalog agent guide"
     },
     {
+      "rel": "license",
+      "href": "https://creativecommons.org/licenses/by/4.0/",
+      "type": "text/html",
+      "title": "CC-BY-4.0"
+    },
+    {
+      "rel": "via",
+      "href": "https://developers.google.com/earth-engine/datasets/publisher/forestdatapartnership",
+      "type": "text/html",
+      "title": "Forest Data Partnership in the Earth Engine data catalog"
+    },
+    {
       "rel": "vcs",
-      "href": "https://github.com/TODO(setup)",
+      "href": "https://github.com/portolan-mirrors/forest-data-partnership-catalog",
       "title": "Source repository"
     },
     {
       "rel": "issues",
-      "href": "https://github.com/TODO(setup)/issues",
+      "href": "https://github.com/portolan-mirrors/forest-data-partnership-catalog/issues",
       "title": "Issue tracker"
+    },
+    {
+      "rel": "child",
+      "href": "./cocoa-2018/collection.json",
+      "type": "application/json",
+      "title": "Cocoa probability 2018 (Forest Data Partnership model 2026a)"
+    },
+    {
+      "rel": "child",
+      "href": "./coffee-2018/collection.json",
+      "type": "application/json",
+      "title": "Coffee probability 2018 (Forest Data Partnership model 2026a)"
+    },
+    {
+      "rel": "child",
+      "href": "./palm-2018/collection.json",
+      "type": "application/json",
+      "title": "Oil palm probability 2018 (Forest Data Partnership model 2026a)"
+    },
+    {
+      "rel": "child",
+      "href": "./rubber-2018/collection.json",
+      "type": "application/json",
+      "title": "Rubber probability 2018 (Forest Data Partnership model 2026a)"
+    },
+    {
+      "rel": "child",
+      "href": "./cocoa-2024/collection.json",
+      "type": "application/json",
+      "title": "Cocoa probability 2024 (Forest Data Partnership model 2026a)"
+    },
+    {
+      "rel": "child",
+      "href": "./coffee-2024/collection.json",
+      "type": "application/json",
+      "title": "Coffee probability 2024 (Forest Data Partnership model 2026a)"
+    },
+    {
+      "rel": "child",
+      "href": "./palm-2024/collection.json",
+      "type": "application/json",
+      "title": "Oil palm probability 2024 (Forest Data Partnership model 2026a)"
+    },
+    {
+      "rel": "child",
+      "href": "./rubber-2024/collection.json",
+      "type": "application/json",
+      "title": "Rubber probability 2024 (Forest Data Partnership model 2026a)"
     }
-  ]
+  ],
+  "updated": "2026-10-10T18:12:15Z"
 }

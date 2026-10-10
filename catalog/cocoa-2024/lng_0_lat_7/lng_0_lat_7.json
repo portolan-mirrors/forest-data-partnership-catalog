@@ -1,0 +1,171 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/render/v2.0.0/schema.json"
+  ],
+  "id": "lng_0_lat_7",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          0.0,
+          6.999942188444014
+        ],
+        [
+          0.0,
+          8.00003659425481
+        ],
+        [
+          1.000004574282384,
+          8.00003659425481
+        ],
+        [
+          1.000004574282384,
+          6.999942188444014
+        ],
+        [
+          0.0,
+          6.999942188444014
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    0.0,
+    6.999942188444014,
+    1.000004574282384,
+    8.00003659425481
+  ],
+  "properties": {
+    "title": "Cocoa probability 2024, tile 0°E–1°E, 7°N–8°N",
+    "datetime": "2024-07-01T00:00:00Z",
+    "start_datetime": "2024-01-01T00:00:00Z",
+    "end_datetime": "2024-12-31T23:59:59Z",
+    "gsd": 10,
+    "proj:code": "EPSG:4326",
+    "proj:bbox": [
+      0.0,
+      6.999942188444014,
+      1.000004574282384,
+      8.00003659425481
+    ],
+    "proj:shape": [
+      11133,
+      11132
+    ],
+    "proj:transform": [
+      8.9831528412e-05,
+      0.0,
+      0.0,
+      0.0,
+      -8.9831528412e-05,
+      8.00003659425481
+    ],
+    "raster:spatial_resolution": 8.9831528412e-05,
+    "renders": {
+      "probability": {
+        "title": "Cocoa probability 2024 (0 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "likely-cocoa": {
+        "title": "Likely cocoa (probability 0.5 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.5,
+            1.0
+          ]
+        ]
+      }
+    },
+    "portolan:render_order": [
+      "probability"
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://storage.googleapis.com/earth-engine-public-requester-pays/forestdatapartnership/2026a/cocoa/2024/lng_0_lat_7.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Source file (Google Cloud Storage, requester pays)"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./lng_0_lat_7.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
+      "title": "Cocoa probability 2024 (COG)",
+      "file:size": 550629111,
+      "file:checksum": "d501100ce1559781d4fb75bcfea125b0491812",
+      "bands": [
+        {
+          "name": "probability",
+          "data_type": "float32",
+          "description": "Probability that the pixel includes cocoa trees in 2024",
+          "statistics": {
+            "maximum": 0.99983984231949,
+            "mean": 0.18020503908407,
+            "minimum": 5.0445790588698e-27,
+            "stddev": 0.29733814292835,
+            "valid_percent": 100.0
+          }
+        }
+      ]
+    },
+    "thumbnail": {
+      "href": "./lng_0_lat_7.thumb.jpg",
+      "type": "image/jpeg",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Thumbnail of tile lng_0_lat_7",
+      "file:size": 35720,
+      "file:checksum": "1220007f77f034dbe97360819282db4d6ebec3f6c48cd70e1a61af0ea5a829e79d6e"
+    }
+  },
+  "collection": "cocoa-2024"
+}

@@ -1,0 +1,171 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/render/v2.0.0/schema.json"
+  ],
+  "id": "lng_9_lat_-1",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          8.99995133700825,
+          -1.000004574282384
+        ],
+        [
+          8.99995133700825,
+          0.0
+        ],
+        [
+          10.000045742819045,
+          0.0
+        ],
+        [
+          10.000045742819045,
+          -1.000004574282384
+        ],
+        [
+          8.99995133700825,
+          -1.000004574282384
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    8.99995133700825,
+    -1.000004574282384,
+    10.000045742819045,
+    0.0
+  ],
+  "properties": {
+    "title": "Rubber probability 2018, tile 9°E–10°E, 1°S–0°N",
+    "datetime": "2018-07-01T00:00:00Z",
+    "start_datetime": "2018-01-01T00:00:00Z",
+    "end_datetime": "2018-12-31T23:59:59Z",
+    "gsd": 10,
+    "proj:code": "EPSG:4326",
+    "proj:bbox": [
+      8.99995133700825,
+      -1.000004574282384,
+      10.000045742819045,
+      0.0
+    ],
+    "proj:shape": [
+      11132,
+      11133
+    ],
+    "proj:transform": [
+      8.9831528412e-05,
+      0.0,
+      8.99995133700825,
+      0.0,
+      -8.9831528412e-05,
+      0.0
+    ],
+    "raster:spatial_resolution": 8.9831528412e-05,
+    "renders": {
+      "probability": {
+        "title": "Rubber probability 2018 (0 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "likely-rubber": {
+        "title": "Likely rubber (probability 0.5 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.5,
+            1.0
+          ]
+        ]
+      }
+    },
+    "portolan:render_order": [
+      "probability"
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://storage.googleapis.com/earth-engine-public-requester-pays/forestdatapartnership/2026a/rubber/2018/lng_9_lat_-1.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Source file (Google Cloud Storage, requester pays)"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./lng_9_lat_-1.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
+      "title": "Rubber probability 2018 (COG)",
+      "file:size": 533377491,
+      "file:checksum": "d50110001fdfae556382f1c06e7af60c7f95e6",
+      "bands": [
+        {
+          "name": "probability",
+          "data_type": "float32",
+          "description": "Probability that the pixel includes rubber trees in 2018",
+          "statistics": {
+            "maximum": 0.91911309957504,
+            "mean": 0.00026552741671997,
+            "minimum": 2.1493667956562e-11,
+            "stddev": 0.005768531425132,
+            "valid_percent": 97.07
+          }
+        }
+      ]
+    },
+    "thumbnail": {
+      "href": "./lng_9_lat_-1.thumb.jpg",
+      "type": "image/jpeg",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Thumbnail of tile lng_9_lat_-1",
+      "file:size": 3153,
+      "file:checksum": "1220457da44ebeaf79e0b199ae5d6324601ca18c9071967a4c6acdf07804ef0a43c9"
+    }
+  },
+  "collection": "rubber-2018"
+}

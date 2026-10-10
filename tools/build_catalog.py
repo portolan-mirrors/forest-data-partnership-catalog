@@ -51,7 +51,7 @@ SWITCH_ZOOM = 9  # the overview draws below this zoom, the tiles from it (portol
 GSD = 10
 
 # When each year's files were copied, verified and published (UTC).
-SYNCED = {"2024": "2026-10-10T17:10:16Z", "2018": "2026-10-10T18:15:00Z"}
+SYNCED = {"2024": "2026-10-10T17:10:16Z", "2018": "2026-10-10T18:12:15Z"}
 
 PORTOLAN = "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json"
 EXT = {

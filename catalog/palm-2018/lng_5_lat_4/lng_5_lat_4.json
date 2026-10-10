@@ -1,0 +1,171 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/render/v2.0.0/schema.json"
+  ],
+  "id": "lng_5_lat_4",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          4.999933039880845,
+          3.99992846559846
+        ],
+        [
+          4.999933039880845,
+          5.000022871409256
+        ],
+        [
+          6.000027445691641,
+          5.000022871409256
+        ],
+        [
+          6.000027445691641,
+          3.99992846559846
+        ],
+        [
+          4.999933039880845,
+          3.99992846559846
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    4.999933039880845,
+    3.99992846559846,
+    6.000027445691641,
+    5.000022871409256
+  ],
+  "properties": {
+    "title": "Oil palm probability 2018, tile 5°E–6°E, 4°N–5°N",
+    "datetime": "2018-07-01T00:00:00Z",
+    "start_datetime": "2018-01-01T00:00:00Z",
+    "end_datetime": "2018-12-31T23:59:59Z",
+    "gsd": 10,
+    "proj:code": "EPSG:4326",
+    "proj:bbox": [
+      4.999933039880845,
+      3.99992846559846,
+      6.000027445691641,
+      5.000022871409256
+    ],
+    "proj:shape": [
+      11133,
+      11133
+    ],
+    "proj:transform": [
+      8.9831528412e-05,
+      0.0,
+      4.999933039880845,
+      0.0,
+      -8.9831528412e-05,
+      5.000022871409256
+    ],
+    "raster:spatial_resolution": 8.9831528412e-05,
+    "renders": {
+      "probability": {
+        "title": "Oil palm probability 2018 (0 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "likely-palm": {
+        "title": "Likely oil palm (probability 0.5 to 1)",
+        "assets": [
+          "data"
+        ],
+        "bidx": [
+          1
+        ],
+        "colormap_name": "ylgn",
+        "resampling": "average",
+        "rescale": [
+          [
+            0.5,
+            1.0
+          ]
+        ]
+      }
+    },
+    "portolan:render_order": [
+      "probability"
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://storage.googleapis.com/earth-engine-public-requester-pays/forestdatapartnership/2026a/palm/2018/lng_5_lat_4.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Source file (Google Cloud Storage, requester pays)"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "./lng_5_lat_4.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
+      "title": "Oil palm probability 2018 (COG)",
+      "file:size": 300145100,
+      "file:checksum": "d50110846043d379bf2b5fe841075220c7a483",
+      "bands": [
+        {
+          "name": "probability",
+          "data_type": "float32",
+          "description": "Probability that the pixel includes oil palm trees in 2018",
+          "statistics": {
+            "maximum": 0.90656304359436,
+            "mean": 0.0001165989575108,
+            "minimum": 2.4358605410502e-12,
+            "stddev": 0.0042429249362696,
+            "valid_percent": 55.42
+          }
+        }
+      ]
+    },
+    "thumbnail": {
+      "href": "./lng_5_lat_4.thumb.jpg",
+      "type": "image/jpeg",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Thumbnail of tile lng_5_lat_4",
+      "file:size": 4798,
+      "file:checksum": "1220f15c10fa85083de73d4fbce93bc414518d726593c2e7ae4694c1dd46ca8ed76a"
+    }
+  },
+  "collection": "palm-2018"
+}
