@@ -111,8 +111,7 @@
       "href": "./coffee-2024_overview.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "roles": [
-        "overview",
-        "data"
+        "overview"
       ],
       "title": "Coffee probability 2024, pan-tropical overview at about 320 m (COG)",
       "description": "All 5516 tiles of release 2026a for 2024 (24°S to 24°N), not only the tiles this collection mirrors, in one file at about 320 m: the 347 px level of every source tile as Google published it (mean-resampled), mosaicked without resampling again. NaN where no tile or no data. For maps below zoom 9 and coarse statistics.",

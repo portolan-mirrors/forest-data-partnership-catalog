@@ -191,7 +191,9 @@ def measured_paragraph(tiles):
 
 def overview_asset(cfg, year, ov):
     return {
-        "href": f"./{ov['file']}", "type": COG_TYPE, "roles": ["overview", "data"],
+        # Role `overview` only: it is a derived view of the whole collection, not a scene.
+        # With `data` it would read as a scene COG at collection level (PORTO-CORE-071).
+        "href": f"./{ov['file']}", "type": COG_TYPE, "roles": ["overview"],
         "title": f"{cfg['label']} probability {year}, pan-tropical overview at about 320 m (COG)",
         "description": (
             f"All {ov['source_tiles']} tiles of release {RELEASE} for {year} (24°S to 24°N), not only the tiles "

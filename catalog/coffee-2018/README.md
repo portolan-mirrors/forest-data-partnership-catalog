@@ -28,5 +28,6 @@ This collection mirrors the 224 one-degree tiles of release 2026a for 2018 that 
 | `<tile>/<tile>.thumb.jpg` | 347 px preview of each tile, YlGn ramp |
 | `<tile>/<tile>.json` | STAC item of each tile |
 | `items.parquet` | all items as STAC GeoParquet, for one-request queries |
+| `coffee-2018_overview.tif` | pan-tropical overview at about 320 m, for maps below zoom 9 |
 
 Browse: https://source.coop/portolan-mirrors/forest-data-partnership-catalog/coffee-2018

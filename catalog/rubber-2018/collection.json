@@ -7,7 +7,8 @@
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
     "https://stac-extensions.github.io/render/v2.0.0/schema.json",
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.2.0/schema.json"
   ],
   "id": "rubber-2018",
   "title": "Rubber probability 2018 (Forest Data Partnership model 2026a)",
@@ -106,6 +107,57 @@
       "file:size": 80707,
       "file:checksum": "1220896879114e7ad9dd597baca6d3e7b63bbcfa723db7564bbd75111f0ba7e93b9f"
     },
+    "overview": {
+      "href": "./rubber-2018_overview.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "overview"
+      ],
+      "title": "Rubber probability 2018, pan-tropical overview at about 320 m (COG)",
+      "description": "All 5516 tiles of release 2026a for 2018 (24°S to 24°N), not only the tiles this collection mirrors, in one file at about 320 m: the 347 px level of every source tile as Google published it (mean-resampled), mosaicked without resampling again. NaN where no tile or no data. For maps below zoom 9 and coarse statistics.",
+      "gsd": 321,
+      "proj:code": "EPSG:4326",
+      "proj:bbox": [
+        -180.00001488697754,
+        -24.00126515613981,
+        180.0004857815683,
+        24.00001995123602
+      ],
+      "proj:shape": [
+        16655,
+        124909
+      ],
+      "proj:transform": [
+        0.0028821021757323,
+        0.0,
+        -180.00001488697754,
+        0.0,
+        -0.0028820945726434,
+        24.00001995123602
+      ],
+      "raster:spatial_resolution": 0.0028821021757323,
+      "bands": [
+        {
+          "name": "probability",
+          "data_type": "float32",
+          "nodata": "nan",
+          "description": "Probability that the pixel includes rubber trees in 2018",
+          "statistics": {
+            "maximum": 1.0,
+            "mean": 0.0061726204535253,
+            "minimum": 7.6217230768859e-14,
+            "stddev": 0.045805874354688,
+            "valid_percent": 27.12
+          }
+        }
+      ],
+      "processing:lineage": "For each of the release's source tiles: gdal_translate -ovr 4 (the 347 px internal overview, as published, unchanged). Then gdalbuildvrt -vrtnodata nan over the extracts, and gdal_translate -of COG -co COMPRESS=ZSTD -co PREDICTOR=YES -co BLOCKSIZE=512 -co OVERVIEW_RESAMPLING=AVERAGE -co STATISTICS=YES. Script: tools/build_overview.sh.",
+      "processing:software": {
+        "GDAL": "3.13.3 \"Iowa City\""
+      },
+      "file:size": 2489734564,
+      "file:checksum": "122073d9f068ee6cd2b5b768b17935fe7534643b33bc433398f9a32f78854f88feb1"
+    },
     "thumbnail": {
       "href": "./lng_-2_lat_6/lng_-2_lat_6.thumb.jpg",
       "type": "image/jpeg",
@@ -133,6 +185,10 @@
           0.0,
           1.0
         ]
+      ],
+      "minmax_zoom": [
+        9,
+        22
       ]
     },
     "likely-rubber": {
@@ -150,6 +206,31 @@
           0.5,
           1.0
         ]
+      ],
+      "minmax_zoom": [
+        9,
+        22
+      ]
+    },
+    "overview": {
+      "title": "Rubber probability 2018 (0 to 1), overview below zoom 9",
+      "assets": [
+        "overview"
+      ],
+      "bidx": [
+        1
+      ],
+      "colormap_name": "ylgn",
+      "resampling": "average",
+      "rescale": [
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "minmax_zoom": [
+        0,
+        8
       ]
     }
   },
