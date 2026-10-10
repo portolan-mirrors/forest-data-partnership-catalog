@@ -6,10 +6,11 @@
 # Source Cooperative serves these objects. data.source.coop returns raw bytes.
 # source.coop renders the human-facing page.
 
-# The S3 URI uploads are written to, through the data.source.coop gateway: the
-# Source Cooperative account is the bucket and the product is the key prefix.
-# Credentials come from `source-coop creds` (see profile below).
-write_prefix: s3://portolan-mirrors/forest-data-partnership-catalog
+# The S3 URI uploads are written to: the real bucket behind Source Cooperative,
+# as portolan-mirrors/firms-catalog does. CI writes through the IAM role Source
+# Cooperative approved for the portolan-mirrors organization
+# (.github/workflows/publish.yml). The account is a key prefix here.
+write_prefix: s3://us-west-2.opendata.source.coop/portolan-mirrors/forest-data-partnership-catalog
 
 # The public base URL that serves write_prefix. Every href in the catalog is
 # built from this, so it goes in the STAC JSON and write_prefix does not.
@@ -17,16 +18,19 @@ public_base: https://data.source.coop/portolan-mirrors/forest-data-partnership-c
 
 region: us-west-2
 
-# The gateway is S3-compatible, so every request goes to it.
-endpoint_url: https://data.source.coop
-
-# The named AWS profile the publisher uses. It runs `source-coop creds` as a
-# credential_process, which refreshes the temporary credentials on expiry:
+# No endpoint_url: write_prefix names the bucket in AWS S3 directly.
 #
-#   [profile source-coop]
-#   credential_process = source-coop creds
-#   endpoint_url = https://data.source.coop
-profile: source-coop
+# Publishing by hand instead, with your own Source Cooperative login, goes through
+# the data.source.coop gateway, where the account is the bucket. Use these values
+# for that run (and do not commit them):
+#   write_prefix: s3://portolan-mirrors/forest-data-partnership-catalog
+#   endpoint_url: https://data.source.coop
+#   profile: source-coop      # credential_process = source-coop creds
+
+# The named AWS profile for a local run with the organization role. CI leaves it
+# unused: configure-aws-credentials puts the role in the environment, and
+# publish.py prefers that whenever AWS_ACCESS_KEY_ID is set.
+profile: portolan-mirrors
 
 # The directory that IS the published catalog, synced 1:1 to write_prefix.
 # Nothing outside it is ever uploaded.

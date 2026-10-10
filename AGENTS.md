@@ -22,12 +22,18 @@ hand. `items.parquet` is gitignored and rebuilt by the steps above.
 
 ### How it publishes
 
-This catalog publishes with `tools/publish.py` (metadata under `catalog/`) and
-`tools/upload_data.py` (thumbnails and overviews from `data_dir`), through the
-`data.source.coop` gateway with the `source-coop` AWS profile. `portolan push`
-keeps different state and does not interoperate with these tools, so leave it unused here. The
-mirrored tiles were copied once by the transfer scripts in the planning repository
-and are not re-uploaded.
+Merging to `main` publishes. `.github/workflows/publish.yml` regenerates the STAC,
+stops if it differs from the commit, rebuilds `items.parquet`, runs the gates, and
+runs `tools/publish.py --confirm` against the real Source Cooperative bucket. It
+writes through the IAM role Source Cooperative approved for the `portolan-mirrors`
+organization, assumed with GitHub OIDC. Run it by hand from the Actions tab
+(`workflow_dispatch`) when needed.
+
+Data files (tiles, thumbnails, overviews) go up separately with
+`tools/upload_data.py`, from the machine that holds them. The mirrored tiles were
+copied once by the transfer scripts and are not re-uploaded. `portolan push`
+keeps different state and does not interoperate with these tools, so leave it
+unused here.
 
 ### The publish boundary
 
