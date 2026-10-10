@@ -42,6 +42,7 @@ import argparse
 import hashlib
 import sys
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
@@ -213,12 +214,44 @@ def aws_session(config: dict[str, str]):
     existed. Raises ImportError when boto3 is missing, and ProfileNotFound
     when the named profile is not in the AWS config.
     """
+    import os
+
     import boto3
 
+    # In CI there is no named profile: the role's credentials arrive as
+    # environment variables (configure-aws-credentials). Honour the configured
+    # profile only when no credentials are in the environment. Same fix as
+    # portolan-mirrors/firms-catalog.
+    profile = config.get("profile") or None
+    if os.environ.get("AWS_ACCESS_KEY_ID"):
+        profile = None
     return boto3.Session(
-        profile_name=config.get("profile") or None,
+        profile_name=profile,
         region_name=config.get("region") or None,
     )
+
+
+# Source Cooperative sits behind Cloudflare, which can answer 520, 522 or 524 when
+# its origin is slow. botocore's standard retries cover 500, 502, 503 and 504 only,
+# and a dropped connection carries no status at all. The transfer of this catalog's
+# tiles hit 520 on 19 of 1,792 uploads. Retry each file, matching exceptions by class
+# name so the dry-run and test paths still run without botocore.
+RETRY_STATUS = {500, 502, 503, 504, 520, 522, 524}
+RETRY_EXCEPTIONS = {
+    "EndpointConnectionError", "ConnectionClosedError", "ConnectTimeoutError",
+    "ReadTimeoutError", "ConnectionError", "IncompleteReadError",
+    "ResponseStreamingError", "RemoteDisconnected", "ProtocolError",
+}
+UPLOAD_ATTEMPTS = 6
+
+
+def is_retryable(error: Exception) -> bool:
+    """True for a transient gateway or connection failure worth another attempt."""
+    if type(error).__name__ in RETRY_EXCEPTIONS:
+        return True
+    response = getattr(error, "response", None) or {}
+    status = response.get("ResponseMetadata", {}).get("HTTPStatusCode")
+    return status in RETRY_STATUS or any(f"({s})" in str(error) for s in RETRY_STATUS)
 
 
 def remote_index(
@@ -264,12 +297,19 @@ def upload_all(session, bucket: str, uploads: list[Upload]) -> list[str]:
         return thread_state.client
 
     def put(upload: Upload) -> None:
-        client().upload_file(
-            str(upload.local),
-            bucket,
-            upload.key,
-            ExtraArgs={"ContentType": upload.content_type},
-        )
+        for attempt in range(1, UPLOAD_ATTEMPTS + 1):
+            try:
+                client().upload_file(
+                    str(upload.local),
+                    bucket,
+                    upload.key,
+                    ExtraArgs={"ContentType": upload.content_type},
+                )
+                return
+            except Exception as error:  # noqa: BLE001 - classified below
+                if attempt == UPLOAD_ATTEMPTS or not is_retryable(error):
+                    raise
+                time.sleep(min(2 ** attempt, 30))
 
     failures: list[str] = []
     done = 0
